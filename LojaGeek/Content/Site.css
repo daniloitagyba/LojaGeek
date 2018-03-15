@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.img-center {
+    margin: 0 auto;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
