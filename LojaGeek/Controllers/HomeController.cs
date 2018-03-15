@@ -14,7 +14,5 @@ namespace LojaGeek.Controllers
             var esportes = DbFactory.Instance.ClienteRepository.FindAll();
             return View();
         }
-
-        // Teste
     }
 }
