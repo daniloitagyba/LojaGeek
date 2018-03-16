@@ -21,7 +21,19 @@ namespace LojaGeek.Model.DB.Repository
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao buscar pessoa pelo nome", ex);
+                throw new Exception("Erro ao buscar pessoa pelo nome ", ex);
+            }
+        }
+
+        public Cliente Login(String email, String senha)
+        {
+            try
+            {
+                return this.Session.Query<Cliente>().FirstOrDefault(f => f.Email == email && f.Senha == senha);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possivel logar ", ex);
             }
         }
     }

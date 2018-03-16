@@ -12,7 +12,7 @@ namespace LojaGeek.Model.DB.Model
     {
         public Cliente()
         {
-            Enderecos = new List<Endereco>();
+            //Enderecos = new List<Endereco>();
         }
 
         public static List<Cliente> Clientes = new List<Cliente>();
@@ -22,7 +22,8 @@ namespace LojaGeek.Model.DB.Model
         public virtual String Sobrenome { get; set; }
         public virtual int Cpf { get; set; }
         public virtual String Email { get; set; }
-        public virtual IList<Endereco> Enderecos { get; set; }
+        public virtual String Senha { get; set; }
+        //public virtual IList<Endereco> Enderecos { get; set; }
     }
 
     public class ClienteMap : ClassMapping<Cliente>
@@ -35,7 +36,7 @@ namespace LojaGeek.Model.DB.Model
             Property(x => x.Sobrenome);
             Property(x => x.Cpf);
             Property(x => x.Email);
-            //HasMany(x => x.Enderecos);
+            Property(x => x.Senha);
         }
     }
 }
