@@ -43,8 +43,8 @@ namespace LojaGeek.Controllers
 
         public ActionResult GravarCliente(Cliente cliente)
         {
-            DbFactory.Instance.ClienteRepository.SaveOrUpdate(cliente);
-            return RedirectToAction("EntrarCliente");
+                DbFactory.Instance.ClienteRepository.SaveOrUpdate(cliente);
+                return RedirectToAction("EntrarCliente");
         }
     }
 }
