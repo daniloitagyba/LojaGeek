@@ -1,0 +1,51 @@
+﻿@model IEnumerable<LojaGeek.Model.DB.Model.Produto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Novo Produto", "CadastrarProduto")
+</p>
+
+<table class="table table-striped table-bordered table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoCompleta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecoUnitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoCompleta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecoUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditarProduto", new { id = item.Id }) |
+                @Html.ActionLink("Apagar", "ApagarProduto", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
