@@ -13,6 +13,7 @@ namespace LojaGeek.Model.DB.Model
         public static List<Endereco> Enderecos = new List<Endereco>();
 
         public virtual Guid Id { get; set; }
+        public virtual Guid ClienteId { get; set; }
         public virtual String Descricao { get; set; }
         public virtual int Cep { get; set; }
         public virtual String Logradouro { get; set; }
@@ -29,6 +30,7 @@ namespace LojaGeek.Model.DB.Model
         {
             Id(x => x.Id, m => m.Generator(Generators.Guid));
 
+            Property(x => x.ClienteId);
             Property(x => x.Descricao);
             Property(x => x.Cep);
             Property(x => x.Logradouro);

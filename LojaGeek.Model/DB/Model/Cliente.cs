@@ -10,11 +10,6 @@ namespace LojaGeek.Model.DB.Model
 {
     public class Cliente
     {
-        public Cliente()
-        {
-            //Enderecos = new List<Endereco>();
-        }
-
         public static List<Cliente> Clientes = new List<Cliente>();
 
         public virtual Guid Id { get; set; }
@@ -23,7 +18,6 @@ namespace LojaGeek.Model.DB.Model
         public virtual int Cpf { get; set; }
         public virtual String Email { get; set; }
         public virtual String Senha { get; set; }
-        //public virtual IList<Endereco> Enderecos { get; set; }
     }
 
     public class ClienteMap : ClassMapping<Cliente>
