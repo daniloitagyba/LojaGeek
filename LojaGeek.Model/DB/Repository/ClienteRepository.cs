@@ -3,8 +3,6 @@ using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LojaGeek.Model.DB.Repository
 {
@@ -34,6 +32,18 @@ namespace LojaGeek.Model.DB.Repository
             catch (Exception ex)
             {
                 throw new Exception("Não foi possivel logar ", ex);
+            }
+        }
+
+        public Cliente FindByCpf(int cpf)
+        {
+            try
+            {
+                return this.Session.Query<Cliente>().FirstOrDefault(w => w.Cpf == cpf);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao buscar pessoa pelo cpf ", ex);
             }
         }
     }

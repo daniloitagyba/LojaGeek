@@ -1,10 +1,6 @@
 ﻿using LojaGeek.Model.DB;
 using LojaGeek.Model.DB.Model;
 using LojaGeek.Model.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LojaGeek.Controllers
@@ -43,8 +39,15 @@ namespace LojaGeek.Controllers
 
         public ActionResult GravarCliente(Cliente cliente)
         {
+           if (ModelState.IsValid)
+            { 
                 DbFactory.Instance.ClienteRepository.SaveOrUpdate(cliente);
                 return RedirectToAction("EntrarCliente");
+            }
+           else
+            {
+                return View("CadastrarCliente", cliente);
+            }
         }
     }
 }
