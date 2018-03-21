@@ -4,24 +4,11 @@ using NHibernate.Mapping.ByCode.Conformist;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 
 namespace LojaGeek.Model.DB.Model
 {
     public class Cliente
     {
-        public Cliente()
-        {
-            var culture = new CultureInfo("pt-BR");
-            var v1 = culture.DateTimeFormat.GetDayName(DateTime.Today.DayOfWeek).ToString().Substring(0, 3);
-            var v2 = DateTime.Now.Month.ToString();
-            var dia = DateTime.Now.Day;
-            var hora = DateTime.Now.Hour;
-            var v3 = (dia + hora).ToString();
-
-            Senha = v1+v2+v3;
-        }
-
         public static List<Cliente> Clientes = new List<Cliente>();
 
         public virtual Guid Id { get; set; }
