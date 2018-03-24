@@ -22,6 +22,7 @@ namespace LojaGeek.Model.DB.Model
         public virtual String Bairro { get; set; }
         public virtual String Cidade { get; set; }
         public virtual String Uf { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 
     public class EnderecoMap : ClassMapping<Endereco>
@@ -39,6 +40,13 @@ namespace LojaGeek.Model.DB.Model
             Property(x => x.Bairro);
             Property(x => x.Cidade);
             Property(x => x.Uf);
+
+            ManyToOne(x => x.Cliente, m => {
+                m.Unique(true);
+                m.Column("ClienteId");
+                m.Lazy(LazyRelation.NoLazy);
+                m.Cascade(Cascade.Persist);
+            });
         }
     }
 }
