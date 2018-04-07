@@ -57,6 +57,7 @@ namespace LojaGeek.Controllers
         public ActionResult Detalhes(Guid id)
         {
             ViewBag.produto = DbFactory.Instance.ProdutoRepository.FindById(id);
+            ViewBag.comentarios = DbFactory.Instance.ComentarioRepository.FindAll();
             return View();
         }
     }

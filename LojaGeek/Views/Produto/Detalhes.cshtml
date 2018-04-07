@@ -57,8 +57,39 @@
             }
         </dd>
 
+        @using (Html.BeginForm("GravarComentario", "Comentario", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="comentario">Adicione seu comentário aqui:</label>
+                <textarea class="form-control" rows="5" name="comentario"></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="nome" placeholder="Qual o seu nome ?" required />
+            </div>
+
+            <input type="hidden" name="idProduto" value="@ViewBag.produto.Id" />
+
+            <input type="submit" class="btn btn-md btn-primary btn-block" value="Enviar comentário">
+        }
+
     </dl>
 </div>
+<hr />
+
+<h2>Comentários</h2>
+@foreach (var item in @ViewBag.comentarios)
+{
+    if (@item.Produto.Id == @ViewBag.produto.Id)
+    {
+        <div class="container">
+            <h4>@item.Nome</h4>
+            <p>@item.Coment</p>
+        </div>
+    }
+}
+
+<hr />
 <p>
     @Html.ActionLink("Voltar a página principal", "Index", "Home")
 </p>

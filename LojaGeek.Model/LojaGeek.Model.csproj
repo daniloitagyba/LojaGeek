@@ -71,11 +71,13 @@
   <ItemGroup>
     <Compile Include="DB\DbFactory.cs" />
     <Compile Include="DB\Model\Cliente.cs" />
+    <Compile Include="DB\Model\Comentario.cs" />
     <Compile Include="DB\Model\Endereco.cs" />
     <Compile Include="DB\Model\Interesse.cs" />
     <Compile Include="DB\Model\Produto.cs" />
     <Compile Include="DB\Model\Validation\CpfAttribute.cs" />
     <Compile Include="DB\Repository\ClienteRepository.cs" />
+    <Compile Include="DB\Repository\ComentarioRepository.cs" />
     <Compile Include="DB\Repository\EnderecoRepository.cs" />
     <Compile Include="DB\Repository\InteresseRepository.cs" />
     <Compile Include="DB\Repository\ProdutoRepository.cs" />
