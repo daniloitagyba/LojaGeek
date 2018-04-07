@@ -13,8 +13,8 @@ namespace LojaGeek.Model.DB.Model
         public static List<Produto> Produtos = new List<Produto>();
 
         public virtual Guid Id { get; set; }
+        public virtual String Nome { get; set; }
         public virtual String Descricao { get; set; }
-        public virtual String DescricaoCompleta { get; set; }
         public virtual int QuantidadeEstoque { get; set; }
         public virtual double PrecoUnitario { get; set; }
         public virtual String Foto { get; set; }
@@ -26,8 +26,8 @@ namespace LojaGeek.Model.DB.Model
         {
             Id(x => x.Id, m => m.Generator(Generators.Guid));
 
+            Property(x => x.Nome);
             Property(x => x.Descricao);
-            Property(x => x.DescricaoCompleta);
             Property(x => x.QuantidadeEstoque);
             Property(x => x.PrecoUnitario);
             Property(x => x.Foto);

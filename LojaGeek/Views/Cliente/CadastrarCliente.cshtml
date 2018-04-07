@@ -4,7 +4,7 @@
     ViewBag.Title = "Cadastro de Cliente";
 }
 
-@using (Html.BeginForm("GravarCliente","Cliente",FormMethod.Post))
+@using (Html.BeginForm("GravarCliente", "Cliente", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <div class="container">
@@ -52,15 +52,25 @@
                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 
                                 </div>
+                                <fieldset>
+                                    <legend>Interesses:</legend>
+                                    <div style="display:flex; justify-content:space-around">
+                                        <input type="checkbox" name="acao" value="acao" class="form-check-input" />
+                                        <label class="form-check-label">Ação</label>
+                                        <input type="checkbox" name="rpg" value="rpg" class="form-check-input" />
+                                        <label class="form-check-label">RPG</label>
+                                        <input type="checkbox" name="esporte" value="esporte" class="form-check-input" />
+                                        <label class="form-check-label">Esporte</label>
+                                        <input type="checkbox" name="aventura" value="aventura" class="form-check-input" />
+                                        <label class="form-check-label">Aventura</label>
+                                        <input type="checkbox" name="estrategia" value="estrategia" class="form-check-input" />
+                                        <label class="form-check-label">Estratégia</label>
+                                        <input type="checkbox" name="simulador" value="simulador" class="form-check-input" />
+                                        <label class="form-check-label">Simulador</label>
+                                    </div>
+                                </fieldset>
 
-                                <div class="form-group">
-                                    <label>Senha</label>
-
-                                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-
-                                </div>
-
+                                <hr />
                                 <div class="form-group">
 
                                     <input type="submit" class="btn btn-md btn-primary btn-block" value="Enviar">

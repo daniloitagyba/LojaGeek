@@ -36,6 +36,7 @@ namespace LojaGeek.Model.DB.Model
             Property(x => x.Cpf);
             Property(x => x.Email);
             Property(x => x.Senha);
+
         }
     }
 }

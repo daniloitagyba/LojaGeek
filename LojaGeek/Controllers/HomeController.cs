@@ -12,7 +12,14 @@ namespace LojaGeek.Controllers
         public ActionResult Index()
         {
             var esportes = DbFactory.Instance.ClienteRepository.FindAll();
+            var produtos = DbFactory.Instance.ProdutoRepository.FindAll();
+            ViewBag.produtos = produtos;
             return View();
+        }
+
+        public ActionResult Produto(Guid id)
+        {
+            return RedirectToAction("Detalhes","Produto", new { id=id });
         }
     }
 }

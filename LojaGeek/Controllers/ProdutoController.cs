@@ -53,5 +53,11 @@ namespace LojaGeek.Controllers
                 return RedirectToAction("Index");
             }
         }
+
+        public ActionResult Detalhes(Guid id)
+        {
+            ViewBag.produto = DbFactory.Instance.ProdutoRepository.FindById(id);
+            return View();
+        }
     }
 }

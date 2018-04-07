@@ -26,6 +26,7 @@ namespace LojaGeek.Model.DB
         public ClienteRepository ClienteRepository { get; set; }
         public EnderecoRepository EnderecoRepository { get; set; }
         public ProdutoRepository ProdutoRepository { get; set; }
+        public InteresseRepository InteresseRepository { get; set; }
 
         private DbFactory()
         {
@@ -34,6 +35,7 @@ namespace LojaGeek.Model.DB
             ClienteRepository = new ClienteRepository(Session);
             EnderecoRepository = new EnderecoRepository(Session);
             ProdutoRepository = new ProdutoRepository(Session);
+            InteresseRepository = new InteresseRepository(Session);
         }
 
         public static DbFactory Instance

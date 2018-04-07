@@ -160,6 +160,7 @@
     <Compile Include="Controllers\AdministrativoController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InteressesController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -170,6 +171,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\sb-admin-2.min.css" />
+    <Content Include="Images\image-not-found.jpg" />
     <Content Include="Scripts\sb-admin-2.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -212,9 +214,11 @@
     <Content Include="Views\Produto\EditarProduto.cshtml" />
     <Content Include="Views\Shared\_MenuAdministrativo.cshtml" />
     <Content Include="Views\Administrativo\Index.cshtml" />
+    <Content Include="Views\Produto\Detalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Interesses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -249,7 +253,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52155</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

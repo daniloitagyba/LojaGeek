@@ -1,0 +1,64 @@
+﻿@model LojaGeek.Model.DB.Model.Produto
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nome
+        </dt>
+
+        <dd>
+            @ViewBag.Produto.Nome
+        </dd>
+
+        <dt>
+            Descrição
+        </dt>
+
+        <dd>
+            @ViewBag.Produto.Descricao
+        </dd>
+
+        <dt>
+            Quantidade no estoque
+        </dt>
+
+        <dd>
+            @ViewBag.Produto.QuantidadeEstoque
+        </dd>
+
+        <dt>
+            Preço Unitário
+        </dt>
+
+        <dd>
+            @ViewBag.Produto.PrecoUnitario
+        </dd>
+
+        <dt>
+            Foto
+        </dt>
+
+        <dd>
+            @if (@ViewBag.Produto.Foto != null)
+            {
+                <img src="#" alt="imagem do produto" />
+            }
+            else
+            {
+                <img src="~/Images/image-not-found.jpg" alt="Imagem não encontrada" height="200px" width="200px" />
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Voltar a página principal", "Index", "Home")
+</p>

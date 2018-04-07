@@ -12,6 +12,11 @@ namespace LojaGeek.Controllers
             return View(new Cliente());
         }
 
+        public ActionResult CadastrarInteresses()
+        {
+            return View();
+        }
+
         public ActionResult EntrarCliente()
         {
             return View();
@@ -37,17 +42,31 @@ namespace LojaGeek.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult GravarCliente(Cliente cliente)
+        public ActionResult GravarCliente(Cliente cliente, string acao, string rpg, string esporte, string aventura, string estrategia, string simulador)
         {
-           if (ModelState.IsValid)
-            { 
-                DbFactory.Instance.ClienteRepository.SaveOrUpdate(cliente);
-                return RedirectToAction("EntrarCliente");
-            }
-           else
-            {
-                return View("CadastrarCliente", cliente);
-            }
+            if (acao != null)
+                ColocarInteresseBD("Ação", cliente);
+            if (rpg != null)
+                ColocarInteresseBD("RPG", cliente);
+            if (esporte != null)
+                ColocarInteresseBD("Esporte", cliente);
+            if (aventura != null)
+                ColocarInteresseBD("Aventura", cliente);
+            if (estrategia != null)
+                ColocarInteresseBD("Estratégia", cliente);
+            if (simulador != null)
+                ColocarInteresseBD("Simulador", cliente);
+
+            DbFactory.Instance.ClienteRepository.SaveOrUpdate(cliente);
+            return RedirectToAction("Logar");
+        }
+
+        public void ColocarInteresseBD(string nome, Cliente cliente)
+        {
+            Interesse interesse = new Interesse();
+            interesse.NomeInteresse = nome;
+            interesse.Cliente = cliente;
+            DbFactory.Instance.InteresseRepository.SaveOrUpdate(interesse);
         }
     }
 }
