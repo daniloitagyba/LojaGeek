@@ -6,6 +6,18 @@
 <hr />
 <p>
     @Html.ActionLink("Novo Produto", "CadastrarProduto", "Produto", null, new { @class = "btn btn-md btn-primary" })
+
+    @using (Html.BeginForm("BuscarPeloNome", "Produto", FormMethod.Get))
+    {
+
+
+
+        @Html.Editor("edtBusca")
+        <button type="submit" valur="Buscar" class="btn btn-primary">
+            <i class="glyphicon glyphicon-search"></i> Buscar
+        </button>
+    }
+
 </p>
 
 <div class="row">

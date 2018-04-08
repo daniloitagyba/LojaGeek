@@ -74,7 +74,7 @@ namespace LojaGeek.Model.DB.Repository
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao buscar ", ex);
+                throw new Exception("Erro ao buscar pelo id", ex);
             }
         }
     }

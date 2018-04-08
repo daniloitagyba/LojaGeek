@@ -60,5 +60,17 @@ namespace LojaGeek.Controllers
             ViewBag.comentarios = DbFactory.Instance.ComentarioRepository.FindAll();
             return View();
         }
+
+        public ActionResult BuscarPeloNome(String edtBusca)
+        {
+            if (String.IsNullOrEmpty(edtBusca))
+            {
+                return RedirectToAction("Index");
+            }
+
+            var produtos = DbFactory.Instance.ProdutoRepository.GetAllByName(edtBusca);
+
+            return View("Index", produtos);
+        }
     }
 }
