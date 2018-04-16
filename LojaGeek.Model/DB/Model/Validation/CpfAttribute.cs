@@ -13,7 +13,7 @@ namespace LojaGeek.Model.DB.Model.Validation
         {
             if (value != null)
             {
-                int cpf = Convert.ToInt32(value);
+                String cpf = Convert.ToString(value);
                 var cliente = DbFactory.Instance.ClienteRepository.FindByCpf(cpf);
                 if (cliente != null)
                     return new ValidationResult("Já existe um cliente com esse CPF");

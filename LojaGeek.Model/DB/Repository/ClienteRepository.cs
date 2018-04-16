@@ -35,11 +35,11 @@ namespace LojaGeek.Model.DB.Repository
             }
         }
 
-        public Cliente FindByCpf(int cpf)
+        public Cliente FindByCpf(String cpf)
         {
             try
             {
-                return this.Session.Query<Cliente>().FirstOrDefault(w => w.Cpf == cpf);
+                return this.Session.Query<Cliente>().FirstOrDefault(w => w.Cpf.Equals(cpf));
             }
             catch (Exception ex)
             {

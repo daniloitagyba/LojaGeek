@@ -18,7 +18,7 @@ namespace LojaGeek.Model.DB.Model
         public virtual String Sobrenome { get; set; }
         [Required(ErrorMessage = "Informe o CPF")]
         [Cpf]
-        public virtual int Cpf { get; set; }
+        public virtual String Cpf { get; set; }
         [Required(ErrorMessage = "Informe o E-mail")]
         [EmailAddress]
         public virtual String Email { get; set; }
