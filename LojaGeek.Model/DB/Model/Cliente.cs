@@ -17,6 +17,8 @@ namespace LojaGeek.Model.DB.Model
         [Required(ErrorMessage = "Informe o Sobrenome")]
         public virtual String Sobrenome { get; set; }
         [Required(ErrorMessage = "Informe o CPF")]
+        [MaxLength(11, ErrorMessage = "Cpf inválido")]
+        [MinLength(11, ErrorMessage = "Cpf inválido")]
         [Cpf]
         public virtual String Cpf { get; set; }
         [Required(ErrorMessage = "Informe o E-mail")]
